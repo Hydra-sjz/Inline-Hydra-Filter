@@ -56,7 +56,7 @@ markdown_keyboard = [
     ]
 ]
 
-@CodeXBotz.on_message(filters.command('start') & filters.private)
+@CodeXBotz.on_message(filters.command('st') & filters.private)
 async def start_msg_admins(client: CodeXBotz, message: Message):
     if message.from_user.id in ADMINS:
         reply_markup = InlineKeyboardMarkup(start_keyboard)
