@@ -79,7 +79,7 @@ async def start_msg_admins(client: CodeXBotz, message: Message):
     if not await present_in_userbase(message.from_user.id):
         await add_to_userbase(message.from_user.id)
     
-@CodeXBotz.on_message(filters.command('help') & filters.private & filters.admins)
+@CodeXBotz.on_message(filters.command('hp') & filters.private & filters.admins)
 async def help_msg(client: CodeXBotz, message: Message):
     await message.reply(
         text = HELP_MESSAGE,
@@ -87,7 +87,7 @@ async def help_msg(client: CodeXBotz, message: Message):
         reply_markup = InlineKeyboardMarkup(help_keyboard)
     )
 
-@CodeXBotz.on_message(filters.command('about') & filters.private)
+@CodeXBotz.on_message(filters.command('ab') & filters.private)
 async def about_msg(client: CodeXBotz, message: Message):
     user_id = message.from_user.id
     if user_id in ADMINS:
